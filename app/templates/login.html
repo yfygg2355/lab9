@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% from "_formhelpers.html" import render_field %}
+{% block title %} Log In{% endblock %}
+
+{% block body %}
+
+<body>
+    <div>
+            <div style="padding: 20px">
+                <div style="padding: 20px;">
+                    <div>
+                        <h4>Login</h4>
+                    </div>
+                    <div>
+                        <form method="POST" action="{{ url_for('login') }}" novalidate>
+                            {{ form.csrf_token }}
+                            {{ render_field(form.email)}}
+                            {{ render_field(form.password)}}
+                            <div>
+                                <label>
+                                    {{ form.remember(class="error") }}
+                                    <span></span>Remember me
+                                </label>
+                            </div>
+                            <div>
+                                {{ form.submit(class="error") }}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </div>
+</body>
+
+
+{% endblock %}

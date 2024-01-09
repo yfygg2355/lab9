@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %} Users{% endblock %}
+{% block body %}
+
+<div style="text-align: center; padding-top: 20px;">
+    <h3 class="title">Total number of users: {{ total_users }}</h3>
+</div>
+<div class="card mx-auto" style="max-width: 60%;">
+    <div class="card-body">
+        {% if users %}
+        <ul>
+            {% for user in users %}
+                <li>{{ user.username }} ({{ user.email }})</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <div style="text-align: center; padding-top: 20px;">
+            <h3 class="title">There are currently no registered users.</h3>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

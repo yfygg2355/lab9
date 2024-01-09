@@ -1,0 +1,250 @@
+
+.custom-container {
+    height: 70vh;
+    max-width: 70%;
+    background-color: #6c757d;
+    margin-top: 5%;
+}
+
+footer{
+    margin-top: 7%;
+}
+
+.table-container {
+    width: 80%;
+    margin: auto;
+}
+.danger {
+    color: red;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+    border-bottom: 1px solid #525f7f;
+    color: #adb5bd;
+}
+.alert {
+    min-height: 20px;
+    padding: 15px 10px;
+    border-radius: 15px;
+    width: 20%;
+    font-size: 20px;
+    background: #fff;
+    position: fixed;
+    z-index: 9999;
+    top: 10px;
+}
+
+.alert-danger{
+    color: red;
+}
+.contact-container {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.contact-container .row {
+    justify-content: center;
+}
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    flex-grow: 1;
+    padding: 25px 60px;
+}
+.container {
+    display: flex;
+    gap: 30px;
+}
+
+img {
+    height: 80px;
+}
+footer {
+    background: #ccc;
+    display: flex;
+    gap: 30px;
+    padding: 10px 30px;
+}
+h2 {
+    margin: 10px 0;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Стилі для навігаційного меню */
+nav {
+    background-color: #a767f5;
+    padding: 10px;
+}
+
+/* Стилі для елементів меню */
+nav ul {
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+body {
+    margin: 0;
+}
+.custom-container {
+    height: 70vh;
+    max-width: 70%;
+    background-color: #6c757d;
+    margin-top: 5%;
+}
+
+
+.table-container {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table th {
+    background: #525f7f;
+    color: #fff;
+}
+
+table th, table td {
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+}
+
+.nav .container {
+    display: flex;
+    flex-direction: column;
+}
+.nav .container ul {
+    display: flex;
+    gap: 25px;
+    list-style-type: none;
+    margin: 0;
+    background: #666;
+}
+.nav .container ul a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+
+}
+
+.alert {
+    min-height: 20px;
+    padding: 15px 10px;
+    border-radius: 15px;
+    width: 20%;
+    font-size: 20px;
+    background: #fff;
+    position: fixed;
+    z-index: 9999;
+    top: 10px;
+}
+
+.alert-danger{
+    color: red;
+}
+input {
+    height: 25px;
+    width: 150px;
+    padding: 10px;
+    font-size: 16px;
+}
+input[type="submit"] {
+    height: 50px;
+    width: 100%;
+}
+form {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 25px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin-left: 30px;
+}
+
+form > div {
+    display: flex;
+    justify-content: space-between;
+}
+.form-group {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-check-input {
+    width: auto;
+    justify-content: flex-start;
+}
+h4 {
+    font-size: 24px;
+}
+.form-check-label {
+    width: auto;
+    justify-content: flex-start!important;
+    gap: 10px;
+    font-size: 18px;
+}
+.form-check label{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+}
+
+img {
+    max-width: 250px;
+    height: 100%;
+}

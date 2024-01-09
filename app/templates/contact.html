@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %} Contact {% endblock %}
+
+{%
+set contacts = {
+    'My Email: yfyfgg2355@gmail.com': url_for('static'),
+}
+%}
+
+{% block body %}
+<div>
+    <h1>My Contacts</h1>
+    <div>
+        {% for link, logo in contacts.items() %}
+        <div>
+            <div>
+                <a href="{{ link }}">
+                    <img class="contact-logo" src="{{ logo }}" alt="{{ link }}">
+                </a>
+                <p>{{ link }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %} Skill №{{idx}}{% endblock %}
+{% block body %}
+
+<div style="display: flex; margin-top: 5rem; align-items: center;">
+    <h1 style="margin: 0 auto;">Skill №{{ idx }}</h1>
+</div>
+
+{% if idx < skills|length + 1 %}
+<div style="display: flex; margin-top: 5rem; align-items: center;">
+    <h1 style="margin: 0 auto;">{{ skills[idx-1]["Name"] }}</h1>
+</div>
+<div style="text-align: center;">
+    <div style="background-color: #007bff; height: 20px; width: 100%;">
+        <div style="background-color: #0056b3; height: 100%; width: {{ skills[idx-1]['Level'] }}%;"></div>
+    </div>
+</div>
+{% else %}
+<div style="display: flex; margin-top: 5rem; align-items: center;">
+    <h1 style="margin: 0 auto;">Некоректний номер</h1>
+</div>
+{%endif%}
+
+{% endblock %}

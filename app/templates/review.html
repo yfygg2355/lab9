@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% from "_formhelpers.html" import render_field %}
+{% block title %} Reviews{% endblock %}
+{% block body %}
+
+<div style="text-align: center; padding-top: 20px;">
+    <h2>
+        Here you can leave your feedback</h2>
+</div>
+<di style="max-width: 60%;">
+    <div>
+        <form class="form" method="post" action="{{ url_for('review') }}" novalidate>
+            {{ form.csrf_token }}
+                {{ render_field(form.name)}}
+                {{ render_field(form.text)}}
+                {{ render_field(form.rating)}}
+            {{ form.submit(class="btn-round btn btn-primary btn-lg") }}
+        </form>
+    </div>
+</di>
+
+<div style="text-align: center; padding-top: 20px;">
+    <h1 class="title">
+        All reviews</h1>
+</div>
+<div class="table-container">
+    <Table responsive>
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Username</th>
+                <th>Review</th>
+                <th>Rating</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for review in reviews %}
+            <tr>
+                <td>{{ review.id }}</td>
+                <td> {{review.name}}</td>
+                <td> {{review.text}}</td>
+                <td>
+                    <span style="font-size: 14px;">{{review.rating}}</span>
+                </td>
+                <td> {{review.date_posted}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </Table>
+</div>
+
+{% endblock %}

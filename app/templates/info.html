@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% from "_formhelpers.html" import render_field %}
+{% block body %}
+
+<div style="text-align: center; padding: 20px; max-width: 80%;">
+    <h1>Welcome {{ name }}!</h1>
+    <div style="display: flex; justify-content: flex-end;">
+        <form method="post" action="{{ url_for('logout') }}">
+            <button style="padding: 12px;" type="submit">Log out</button>
+        </form>
+    </div>
+</div>
+
+<div style="max-width: 60%;">
+    <div>
+        <form method="post" action="{{ url_for('add_cookie') }}">
+            <div>
+                <label for="key">Key</label>
+                <input name="key" id="key" placeholder="Enter key" type="text">
+            </div>
+            <div>
+                <label for="value">Value</label>
+                <input name="value" id="value" placeholder="Value" type="text">
+            </div>
+            <div>
+                <label for="expiry">Expiry(seconds)</label>
+                <input name="expiry" id="expiry" placeholder="Expiry" type="text">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div style="max-width: 60%;">
+    <div>
+        <form method="post" action="{{ url_for('delete_cookie') }}">
+            <div>
+                <label for="delete_key">Delete Cookie by Key</label>
+                <input name="delete_key" id="delete_cookie" placeholder="Delete cookie" type="text">
+            </div>
+            <button type="submit">Delete cookie</button>
+        </form>
+    </div>
+</div>
+
+<div style="max-width: 60%;">
+    <div>
+        <form method="post" action="{{ url_for('delete_all_cookies') }}">
+            <button type="submit">Delete all cookies</button>
+        </form>
+    </div>
+</div>
+
+<div style="max-width: 60%;">
+    <div>
+        <table style="width: 100%; text-align: center;">
+            <thead>
+                <tr>
+                    <th scope="col">Key</th>
+                    <th scope="col">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cookie_key, cookie_value in cookies %}
+                    <tr>
+                        <td>{{ cookie_key }}</td>
+                        <td>{{ cookie_value }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="change_password_section" style="text-align: center; padding-top: 20px;">
+    <h1>Change password</h1>
+</div>
+<div style="max-width: 60%;">
+    <div>
+        <form method="post" action="{{ url_for('change_password') }}" id="change_password_form" novalidate>
+            {{ form.csrf_token }}
+                {{ render_field(form.current_password)}}
+                {{ render_field(form.new_password)}}
+                {{ render_field(form.confirm_password)}}
+            {{ form.submit() }}
+        </form>
+    </div>
+</div>
+
+{% endblock %}

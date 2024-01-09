@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %} About me{% endblock %}
+
+{%
+    set about_me = {
+        'page_title': 'About Me',
+        'main_title': 'About',
+        'content_dict': {
+            'name': 'Karina Kostyn',
+            'Address': 'Ivano-Frankivsk',
+        }
+    }
+%}
+
+
+{% block body %}
+
+
+<style>
+    .custom-container {
+        padding: 20px;
+    }
+</style>
+
+<div>
+    <div>
+        <div>
+            <h1>{{ about_me.main_title }}</h1>
+            {% for subtitle, content in about_me.content_dict.items() %}
+                <h4 style="margin-bottom: 0;">{{ subtitle }}</h4>
+                <p>{{ content }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block body %}
+
+
+<style>
+    .custom-container {
+        padding: 20px;
+    }
+</style>
+
+<div>
+    <div>
+        <div>
+            <h1>{{ about_me.main_title }}</h1>
+            {% for subtitle, content in about_me.content_dict.items() %}
+                <h4 style="margin-bottom: 0;">{{ subtitle }}</h4>
+                <p>{{ content }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

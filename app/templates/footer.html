@@ -1,0 +1,35 @@
+{% set footer =  {'Home' : url_for('index'), 
+                'About me': url_for('about'), 
+                'Skills': url_for('skill'),
+                'Contacts': url_for('contact'),
+                'Login': url_for('login')
+                }
+                %}
+
+<footer>
+    <div>
+        <h1>PORTFOLIO</h1>
+    </div>
+    <div>
+        <ul>
+            {% for name, url in footer.items() %}
+                <li>
+                    <a href="{{ url }}">{{ name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <a>{{ current_time }}</a>
+            </li>
+            <li>
+                <a>OS: {{ os_info }}</a>
+            </li>
+            <li>
+                <a>User-Agent: {{ user_agent }}</a>
+            </li>
+        </ul>
+    </div>
+</footer>

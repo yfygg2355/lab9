@@ -1,0 +1,21 @@
+{% macro render_field(field) %}
+
+  <div>
+    <label for="{{ field.id }}">{{ field.label }}</label>
+    
+    {% set error_class = ' is-invalid' if field.errors else '' %}
+    {% set placeholder_value = 'Incorrect input' if field.errors else field.label.text %}
+    {{ field(class="form-control" ~ error_class, placeholder=placeholder_value)|safe }}
+
+    {% if field.errors %}
+      <ul class="errors">
+        {% for error in field.errors %}
+          <p class="danger">{{ error }}</p>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+
+{% endmacro %}
+
+

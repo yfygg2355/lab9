@@ -1,0 +1,41 @@
+{% if current_user.is_authenticated %}
+    {% set menu =  {'About me': url_for('about'), 
+                    'Skills': url_for('skill'),
+                    'Contacts': url_for('contact'),
+                    'Feedback': url_for('review'),
+                    'Info': url_for('info'),
+                    'To Do': url_for('todo'),
+                    'My profile': url_for('account'),
+                    'Log out': url_for('logout'),
+                    }
+    %}
+{% else %}
+    {% set menu =  {'About me': url_for('about'), 
+                    'Skills': url_for('skill'),
+                    'Contacts': url_for('contact'),
+                    'Feedback': url_for('review'),
+                    'Info': url_for('info'),
+                    'To Do': url_for('todo'),
+                    'Register': url_for('register'),
+                    'Login': url_for('login'),
+                    }
+    %}
+{% endif %}
+
+<nav>
+    <div>
+        <ul>
+
+            <li class="nav-item">
+               <a href="{{ url_for('index') }}" >Portfolio</a>
+            </li>
+            {% for name, url in menu.items() %}
+            <li class="nav-item">
+                <a href="{{ url }}" class="nav-link">
+                    <p>{{ name }}</p>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</nav>
